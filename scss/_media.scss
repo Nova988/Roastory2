@@ -1,0 +1,174 @@
+@media screen and (max-width: 1000px) {
+  #header {
+    min-height: 75vh;
+
+    .content {
+      width: 75%;
+      min-height: 0;
+      padding: 3rem 2rem;
+    }
+  }
+
+  #new-menu {
+    .short-menu {
+      gap: 2rem;
+      padding: 1rem 2rem;
+    }
+  }
+
+  #about {
+    min-height: 50vh;
+
+    .about-content {
+      min-width: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #header {
+    .navbar > a {
+      display: none;
+    }
+    .content {
+      width: 100%;
+    }
+  }
+
+  #new-menu {
+    .short-menu {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  #team {
+    .teamgroup {
+      gap: 2rem;
+      padding: 0 2rem;
+
+      &-person {
+        flex-basis: 45%;
+        &-img {
+          height: 400px;
+        }
+      }
+    }
+  }
+
+  #contact {
+    min-height: 50vh;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #header {
+    min-height: 75vh;
+    .header-contact {
+      display: none;
+    }
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+
+      > a {
+        display: none;
+      }
+
+      ul {
+        margin-left: 0;
+        padding: 0;
+        padding-bottom: 1rem;
+
+        a {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+
+    .content {
+      padding: 0 1rem;
+      padding-top: 4rem;
+      min-height: 0px;
+
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  #new-menu {
+    .short-menu {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .item {
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  #about {
+    background: none;
+    .about-content {
+      min-width: 100%;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  #team {
+    .teamgroup {
+      flex-direction: column;
+      max-width: 300px;
+      margin: auto;
+
+      &-person {
+        flex-basis: 55%;
+
+        &-img {
+          max-height: 300px;
+        }
+      }
+    }
+  }
+
+  #contact {
+    padding-bottom: 3rem;
+    .contact-section {
+      grid-template-columns: 1fr;
+      grid-gap: 1.5rem;
+
+      .contact-information {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+
+        .info-box {
+          flex: 1 1 30%;
+          i {
+            font-size: 2rem;
+          }
+
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  #main-footer {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+
+      .copyright {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  background-color: #E8E9EB;
+  color: #343434;
+  line-height: 1.6;
+  font-size: 10px;
+  font-family: 'roboto', sans-serif; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+img {
+  width: 100%; }
+
+.container {
+  width: 90vw;
+  margin: auto; }
+
+.section-heading {
+  font-size: 4rem;
+  padding: 3rem 0 2rem 0;
+  text-align: center; }
+
+.btn {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: color 0.4s, border-color 0.4s, background-color 0.4s; }
+  .btn-primary {
+    color: #D00000;
+    border-color: #D00000;
+    transition: color 0.4s, border-color 0.4s, background-color 0.4s; }
+    .btn-primary:hover {
+      background-color: #D00000;
+      color: #E8E9EB;
+      border-color: #E8E9EB; }
+  .btn-light {
+    color: #343434;
+    background: #E8E9EB; }
+    .btn-light:hover {
+      background: #D0D1D3; }
+  .btn-secondary {
+    background: #7C0000;
+    color: #E8E9EB; }
+    .btn-secondary:hover {
+      background: #891919; }
+
+#header {
+  background: url("../img/header.jpg") no-repeat center center/cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  color: #E8E9EB; }
+  #header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1; }
+  #header .header-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #E8E9EB;
+    z-index: 3; }
+    #header .header-contact-information div {
+      display: inline-block;
+      padding-right: 3rem; }
+      #header .header-contact-information div i {
+        padding-right: 1rem;
+        color: #D00000; }
+    #header .header-contact-social a {
+      padding: 0 0.5rem;
+      transition: color 0.35s; }
+      #header .header-contact-social a:hover {
+        color: #D00000; }
+  #header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; }
+    #header .navbar h1 {
+      font-size: 4rem; }
+      #header .navbar h1 span {
+        color: #D00000; }
+    #header .navbar ul {
+      display: flex;
+      margin-left: auto;
+      font-size: 2rem;
+      font-weight: 300;
+      padding: 0 2rem; }
+      #header .navbar ul a {
+        padding: 0.5rem 2rem;
+        transition: background 0.4s ease-out; }
+        #header .navbar ul a:hover {
+          background: #D00000;
+          border-bottom: 1px solid #E8E9EB; }
+  #header .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    min-height: 400px; }
+    #header .content h2 {
+      font-size: 4rem;
+      padding: 1rem 0; }
+    #header .content p {
+      font-size: 2rem;
+      padding-bottom: 2rem; }
+    #header .content .buttons {
+      margin-top: 2rem; }
+      #header .content .buttons a {
+        font-size: 2rem; }
+        #header .content .buttons a:first-child {
+          margin-right: 1rem; }
+
+#new-menu {
+  margin-bottom: 5rem; }
+  #new-menu .short-menu {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1;
+    padding-bottom: 2rem;
+    text-align: center; }
+    #new-menu .short-menu .item {
+      position: relative;
+      background: #D00000;
+      overflow: hidden;
+      border-radius: 20%;
+      width: 300px;
+      height: 200px;
+      border: none; }
+      #new-menu .short-menu .item:after {
+        content: '';
+        position: absolute;
+        display: block;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: inherit;
+        transform: scale(2) translateY(-20%) translateX(-75%) rotate(28deg);
+        transition: transform 700ms ease-in, opacity 1s; }
+      #new-menu .short-menu .item:hover:after {
+        transform: scale(2) translateX(0) translateY(0);
+        opacity: 0.8; }
+      #new-menu .short-menu .item:hover .item-text {
+        opacity: 1;
+        transform: translateY(0); }
+      #new-menu .short-menu .item .item-image {
+        width: 100%;
+        height: 100%; }
+        #new-menu .short-menu .item .item-image img {
+          width: 100%;
+          height: 100%; }
+      #new-menu .short-menu .item .item-text {
+        width: 50%;
+        position: absolute;
+        top: 30px;
+        left: 25%;
+        color: #E8E9EB;
+        font-size: 2.5rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.7s 0.3s ease-in, opacity 0.7s ease-in 0.3s;
+        z-index: 3; }
+
+#about {
+  background: url("../img/background2.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
+  #about .about-content {
+    position: absolute;
+    background: #7C0000;
+    color: #E8E9EB;
+    width: 40%;
+    max-height: 100%;
+    padding: 2rem 4rem;
+    margin: 8rem 0;
+    opacity: 1;
+    z-index: 0;
+    overflow: hidden; }
+    #about .about-content h2 {
+      padding: 2rem 0;
+      font-size: 4rem; }
+    #about .about-content p {
+      font-size: 1.5rem;
+      padding-bottom: 2rem; }
+
+#team .teamgroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  #team .teamgroup-person {
+    flex: 1 1 40%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+    box-shadow: 10px 10px 14px -5px rgba(51, 51, 51, 0.61); }
+    #team .teamgroup-person-img {
+      height: 530px; }
+      #team .teamgroup-person-img img {
+        height: 100%; }
+    #team .teamgroup-person-desc {
+      background: #343434;
+      text-align: center;
+      font-size: 2rem;
+      padding-bottom: 1rem;
+      color: #E8E9EB; }
+      #team .teamgroup-person-desc p:first-child {
+        font-size: 3rem;
+        padding-bottom: 0; }
+      #team .teamgroup-person-desc p:last-child {
+        font-style: italic; }

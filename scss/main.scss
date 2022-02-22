@@ -1,0 +1,465 @@
+// Variables
+$primary-color: #d00000;
+$secondary-color: #7c0000;
+$dark-color: #343434;
+$light-color: #e8e9eb;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: $light-color;
+  color: $dark-color;
+  line-height: 1.6;
+  font-size: 10px;
+  font-family: "roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+// utilitys
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-heading {
+  font-size: 4rem;
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: color 0.4s, border-color 0.4s, background-color 0.4s;
+
+  &-primary {
+    color: $primary-color;
+    border-color: $primary-color;
+    transition: color 0.4s, border-color 0.4s, background-color 0.4s;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $light-color;
+      border-color: $light-color;
+    }
+  }
+
+  &-light {
+    color: $dark-color;
+    background: $light-color;
+
+    &:hover {
+      background: #d0d1d3;
+    }
+  }
+
+  &-secondary {
+    background: $secondary-color;
+    color: $light-color;
+
+    &:hover {
+      background: #891919;
+    }
+  }
+}
+
+.trans-color {
+  transition: color 300ms ease-in;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// Header
+#header {
+  background: url("../img/header.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  color: $light-color;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+  }
+
+  .header-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid $light-color;
+    z-index: 3;
+
+    &-information {
+      div {
+        display: inline-block;
+        padding-right: 3rem;
+
+        i {
+          padding-right: 1rem;
+          color: $primary-color;
+        }
+      }
+    }
+
+    &-social {
+      a {
+        padding: 0 0.5rem;
+      }
+    }
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    padding: 0 1rem;
+
+    h1 {
+      font-size: 4rem;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    ul {
+      display: flex;
+      margin-left: auto;
+      font-size: 2rem;
+      font-weight: 300;
+      padding: 0 2rem;
+
+      a {
+        padding: 0.5rem 2rem;
+        transition: background 0.4s ease-out;
+
+        &:hover {
+          background: $primary-color;
+          border-bottom: 1px solid $light-color;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    min-height: 400px;
+    padding-top: 20vh;
+
+    h2 {
+      font-size: 4rem;
+      padding: 1rem 0;
+    }
+
+    p {
+      font-size: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+
+      a {
+        font-size: 2rem;
+
+        &:first-child {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+#new-menu {
+  margin-bottom: 5rem;
+  overflow: hidden;
+
+  .short-menu {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1;
+    padding-bottom: 2rem;
+    text-align: center;
+
+    .item {
+      position: relative;
+      background: $primary-color;
+      overflow: hidden;
+      border-radius: 2rem;
+      max-width: 300px;
+      max-height: 200px;
+      border: none;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: inherit;
+        transform: scale(2) translateY(-75%) translateX(-75%) rotate(28deg);
+        transition: transform 700ms ease-in, opacity 1s;
+      }
+
+      &:hover:after {
+        transform: scale(2) translateX(0) translateY(0);
+        opacity: 0.8;
+      }
+
+      &:hover .item-text {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .item-image {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .item-text {
+        width: 50%;
+        position: absolute;
+        top: 30px;
+        left: 25%;
+        color: $light-color;
+        font-size: 2.5rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.7s 0.3s ease-in, opacity 0.7s ease-in 0.3s;
+        z-index: 3;
+      }
+    }
+  }
+}
+
+#about {
+  background: url("../img/background2.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  width: 100%;
+  // position: relative;
+  overflow: hidden;
+
+  .about-content {
+    background: $secondary-color;
+    color: $light-color;
+    max-width: 50%;
+    max-height: 100%;
+    padding: 2rem 4rem;
+    margin: 10rem 0 2rem 2rem;
+    opacity: 1;
+    z-index: 0;
+    overflow: hidden;
+
+    h2 {
+      padding: 2rem 0;
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+#team {
+  overflow: hidden;
+  .teamgroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    &-person {
+      flex: 1 1 40%;
+      max-width: 400px;
+      margin-bottom: 2rem;
+      box-shadow: 10px 10px 14px -5px rgba(51, 51, 51, 0.61);
+
+      &-img {
+        height: 530px;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      &-desc {
+        background: $dark-color;
+        text-align: center;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+        color: $light-color;
+
+        p:first-child {
+          font-size: 3rem;
+          padding-bottom: 0;
+        }
+
+        p:last-child {
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+#contact {
+  background: $secondary-color;
+  color: $light-color;
+  min-height: 75vh;
+  padding: 2rem 1rem;
+
+  .contact-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+    overflow: hidden;
+
+    .contact-form {
+      padding-bottom: 2rem;
+      overflow: hidden;
+
+      &-element {
+        margin-top: 2rem;
+        font-size: 2.5rem;
+
+        label {
+          display: inline-block;
+          padding-bottom: 0.5rem;
+        }
+
+        .input {
+          display: block;
+          width: 100%;
+          padding: 1rem 0.5rem;
+          background: $dark-color;
+          color: $light-color;
+          border: none;
+
+          &:focus {
+            outline: none;
+            border: 1px solid $light-color;
+          }
+        }
+      }
+
+      &-element:last-child {
+        .input {
+          min-height: 150px;
+        }
+      }
+    }
+
+    .contact-information {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5rem;
+
+      .info-box {
+        i {
+          font-size: 3rem;
+          padding-bottom: 1rem;
+        }
+        p {
+          font-size: 2rem;
+          min-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+#main-footer {
+  padding: 2rem 0;
+  background: #16161d;
+  color: $light-color;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+
+    .copyright {
+      font-size: 1.2rem;
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 300ms ease-in;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .socials {
+      font-size: 1.7rem;
+
+      a {
+        padding: 0 0.5rem;
+      }
+    }
+  }
+}
+
+@import "media";
